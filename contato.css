@@ -1,0 +1,234 @@
+/* ===================================================
+   ESTILIZAÇÃO E LAYOUT DA INTRO (CONTATO)
+   =================================================== */
+.contato-intro {
+    padding-top: 85px;       
+    background-color: #e3f0f6; /* Azul sutil de fundo padrão */
+}
+
+.intro-flex {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px !important;
+}
+
+.intro-text {
+    flex: 1;
+}
+
+.intro-text .subtitle {
+    display: block;      
+    text-align: center;  
+    margin-bottom: 8px;  
+}
+
+.intro-text h2 {
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.contato-intro .section-desc {
+    max-width: 530px;                    
+    margin: 0 auto 10px auto !important; 
+    text-align: center;                  
+}
+
+.intro-mascote {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.img-mascote {
+    max-width: 260px; 
+    width: 100%;
+    height: auto;
+    border-radius: 16px;
+    filter: drop-shadow(0px 8px 12px rgba(0, 0, 0, 0.06));
+}
+
+/* ===================================================
+   ESTRUTURA EM GRID (2 NA ESQUERDA, 2 NA DIREITA)
+   =================================================== */
+.contato-principal {
+    background-color: #f8fafc;
+    padding: 60px 0;
+}
+
+.contato-grid-main {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2 Colunas de tamanhos iguais */
+    gap: 25px; /* Espaço entre os cards */
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* ESTILO DO CARD INDIVIDUAL */
+.info-card {
+    background: #ffffff;
+    border-radius: 16px;
+    border: 1px solid #eaeaea;
+    padding: 24px;
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.01);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.info-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0, 70, 255, 0.04);
+}
+
+/* ÍCONES INTERNOS DOS CARDS */
+.info-icon {
+    width: 50px;
+    height: 50px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.3rem;
+    flex-shrink: 0;
+}
+
+.icon-blue { background-color: #e3f0f6; color: #0046ff; }
+.icon-green { background-color: #e6f7ed; color: #10b981; }
+.icon-purple { background-color: #f3e8ff; color: #8b5cf6; }
+
+.info-content h3 {
+    font-size: 1.1rem;
+    color: #1e293b;
+    margin-bottom: 6px;
+    font-weight: 700;
+}
+
+.info-content p {
+    font-size: 0.95rem;
+    color: #64748b;
+    line-height: 1.5;
+    margin: 2px 0;
+}
+
+.highlight-text {
+    color: #0046ff !important;
+    font-weight: 600;
+}
+
+.tag-virtual {
+    background-color: #e6f7ed;
+    color: #10b981;
+    font-size: 0.75rem;
+    padding: 2px 8px;
+    border-radius: 20px;
+    font-weight: 600;
+    margin-left: 5px;
+}
+
+.card-link {
+    display: inline-block;
+    margin-top: 8px;
+    font-size: 0.9rem;
+    color: #0046ff;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.btn-whatsapp-card {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background-color: #10b981;
+    color: #ffffff;
+    padding: 8px 16px;
+    border-radius: 8px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-decoration: none;
+    margin-top: 10px;
+    transition: background 0.2s;
+}
+
+.btn-whatsapp-card:hover {
+    background-color: #059669;
+}
+
+.social-links-cards {
+    display: flex;
+    gap: 12px;
+    margin-top: 10px;
+}
+
+.social-links-cards a {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background-color: #f1f5f9;
+    color: #475569;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.1rem;
+    text-decoration: none;
+    transition: all 0.2s;
+}
+
+.social-links-cards a:hover {
+    background-color: #0046ff;
+    color: #ffffff;
+}
+
+/* ===================================================
+   REGRAS DE INSTAGRAM NO FOOTER (Corrigido para Vermelho)
+   =================================================== */
+.footer-instagram {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: #bbb;
+    text-decoration: none;
+    font-size: 0.95rem;
+    margin-top: 15px;
+    transition: 0.3s ease;
+}
+
+.footer-instagram i {
+    font-size: 1.2rem;
+    color: #e1306c; /* Vermelho/Rosa padrão do Instagram usado nas outras abas */
+}
+
+.footer-instagram:hover {
+    color: #e1306c; /* O texto também ganha a cor no hover */
+    transform: translateX(3px);
+}
+
+/* ===================================================
+   RESPONSIVIDADE PARA CELULARES
+   =================================================== */
+@media (max-width: 850px) {
+    .contato-grid-main {
+        grid-template-columns: 1fr; /* Vira 1 coluna em tablets/celulares */
+        gap: 20px;
+    }
+    
+    .intro-flex {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .info-card {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .social-links-cards {
+        justify-content: center;
+    }
+}

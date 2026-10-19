@@ -1,0 +1,998 @@
+:root {
+    --primary: #0000FF;
+    --primary-dark: #1a8f9d;
+    --text-dark: #333333;
+    --text-light: #666666;
+    --bg-light: #f8f9fa;
+    --white: #ffffff;
+    --transition: all 0.3s ease;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+    /* Diz para o navegador parar a rolagem 90px antes do elemento, 
+       abrindo espaço perfeito para a sua navbar fixa */
+    scroll-padding-top: 90px; 
+}
+
+body {
+    color: var(--text-dark);
+    line-height: 1.6;
+    background-color: var(--white);
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 60px 0;
+}
+
+/* Utilitários de Grid */
+.grid-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 40px; align-items: center; }
+.grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; }
+.grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+.text-center { text-align: center; }
+
+h2 {
+    font-size: 2.5rem;
+    color: var(--text-dark);
+    margin-bottom: 20px;
+}
+
+.subtitle {
+    color: var(--primary);
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 1px;
+    display: block;
+    margin-bottom: 10px;
+}
+
+/* Navbar */
+.navbar {
+    background: var(--white);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 15px 5%;
+}
+
+/* Container do link da logo */
+.logo {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    padding: 5px 0; /* Dá um leve respiro vertical */
+}
+
+/* NOVO: Controla perfeitamente o tamanho da imagem da logo */
+.logo-img {
+    height: 45px;        /* Define uma altura fixa ideal para a barra de menu */
+    width: auto;         /* Faz a largura se ajustar proporcionalmente, sem achatar */
+    object-fit: contain; /* Garante que a imagem se encaixe sem cortes */
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+/* Efeito sutil ao passar o mouse na logo (opcional) */
+.logo-img:hover {
+    transform: scale(1.02); /* Dá um leve zoom bem profissional */
+}
+
+.nav-menu {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: var(--text-dark);
+    font-weight: 500;
+    transition: var(--transition);
+}
+
+.nav-link:hover, .nav-link.active {
+    color: var(--primary);
+}
+
+/* Botões */
+.btn-nav, .btn-primary, .btn-secondary {
+    display: inline-block;
+    padding: 10px 24px;
+    border-radius: 25px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: var(--transition);
+    cursor: pointer;
+}
+
+.btn-nav {
+    background: var(--primary);
+    color: var(--white);
+}
+
+/* Mantém os botões do corpo do site como estão */
+.btn-primary:hover {
+    background: var(--primary-dark);
+}
+
+/* Deixa o Fale Conosco do Menu com uma cor exclusiva */
+.btn-nav:hover {
+    background: #0f2758; /* Coloque aqui a cor que você quiser para o menu */
+}
+
+.btn-primary {
+    background: var(--primary);
+    color: var(--white);
+    border: 2px solid var(--primary);
+}
+
+.btn-secondary {
+    background: transparent;
+    color: var(--white);
+    border: 2px solid var(--white);
+}
+
+.btn-secondary:hover {
+    background: var(--white);
+    color: var(--primary);
+}
+
+/* Hero Section */
+.hero {
+    /* Removemos a camada de opacidade e deixamos apenas a sua imagem */
+    background: url('img/fundo.png'); /* <-- Lembre de ajustar o nome do arquivo */
+    background-size: cover;        
+    background-position: center;   
+    background-repeat: no-repeat;  
+    
+    min-height: 80vh; 
+    display: flex;
+    align-items: center;
+    justify-content: flex-start; /* Altera de 'center' para 'flex-start' para jogar tudo para a esquerda */
+    text-align: left;            /* Altera o alinhamento do texto para a esquerda */
+    
+    /* Aumentamos o espaçamento lateral (padding) para o texto não colar na borda da tela */
+    padding: 80px 10% 0px 10%; 
+    position: relative;
+    overflow: hidden;
+}
+
+/* Limitador para o texto não invadir o lado direito da imagem */
+.hero-content {
+    max-width: 550px; /* Garante que o texto quebre linhas antes de chegar na metade direita */
+    width: 100%;
+}
+
+.hero-content max-width { max-width: 800px; }
+
+/* Título Principal (Bem-vindo ao Portal MedClin) */
+.hero h1 {
+    color: #0f172a; /* Azul escuro quase preto bem elegante */
+    font-size: 3.5rem; /* Fonte grande e imponente */
+    font-weight: 700; /* Deixa a fonte bem grossa (Bold) */
+    line-height: 1.1; /* Deixa as linhas do título mais juntinhas */
+    margin-bottom: 25px;
+}
+
+/* O destaque em azul para a palavra "Portal MedClin" */
+.hero h1 span {
+    color: #0046ff; /* O azul vivo e forte do print */
+    font-weight: 800; /* Um pouquinho mais grosso para destacar */
+    position: relative;
+    display: inline-block;
+}
+
+/* A barrinha azul decorativa embaixo do título */
+.hero h1 span::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    width: 60px; /* Largura da barrinha */
+    height: 4px;  /* Espessura da barrinha */
+    background-color: #0046ff;
+}
+
+/* Subtítulo atualizado */
+.hero p {
+    color: #1e293b; /* Cor cinza-escura limpa e profissional */
+    font-size: 1.35rem; /* Tamanho confortável para leitura */
+    font-weight: 500;
+    line-height: 1.5;
+    max-width: 520px; /* Impede que o texto estique demais para o lado */
+    margin-top: 25px; /* Dá o espaço correto por conta da barrinha decorativa */
+}
+
+/* Ajuste de responsividade para celulares */
+/* Ajuste de responsividade para celulares */
+@media (max-width: 768px) {
+    .hero {
+        /* No mobile, adicionamos uma camada branca com 55% de opacidade sobre a imagem */
+        background: linear-gradient(rgba(255, 255, 255, 0.55), rgba(255, 255, 255, 0.75)), 
+                    url('img/fundo.png');
+        background-size: cover;        
+        background-position: center;   
+        background-repeat: no-repeat;
+        
+        /* Centraliza o texto no mobile para ficar mais harmônico na tela pequena */
+        justify-content: center;
+        text-align: center;
+        padding: 100px 20px 40px 20px; 
+    }
+
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+
+    /* Centraliza a barrinha azul decorativa no mobile */
+    .hero h1 span::after {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .hero p {
+        font-size: 1.1rem;
+        margin-left: auto;
+        margin-right: auto; /* Centraliza o bloco de texto no mobile */
+    }
+}
+
+.hero-buttons { display: flex; gap: 15px; justify-content: center; }
+
+/* Sobre */
+.about-section { background: var(--white); }
+.image-placeholder {
+    background-color: #e0f4f6;
+    height: 350px;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--primary);
+    font-size: 5rem;
+}
+.about-text p { margin-bottom: 15px; color: var(--text-light); }
+
+/* CARDS */
+.mvw-section { 
+  background-color: #f8f9fa;
+}
+
+/* Container que organiza os cards em exatamente 4 colunas */
+.services-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 4 cards por fileira no PC */
+  gap: 24px;
+  padding: 40px 20px; /* Aumentei o espaçamento superior/inferior para 40px */
+  
+  /* --- AS NOVAS REGRAS DE ESPAÇAMENTO LATERAL --- */
+  max-width: 1200px;  /* Define o limite de largura para os cards não esticarem infinito */
+  margin: 0 auto;     /* Centraliza o bloco inteiro na tela do computador */
+  
+  background-color: #f8f9fa; /* Fundo levemente cinza para destacar o branco dos cards */
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* --- O CARD ATUALIZADO (ESTILO CLEAN COM BORDA INFERIOR) --- */
+/* --- O CARD ATUALIZADO (FUNDO E BORDAS DINÂMICAS) --- */
+.service-card {
+  /* Usamos a variável para criar um fundo bem clarinho (5% de opacidade da cor original) */
+  background-color: rgba(var(--service-color-rgb), 0.05);
+  border-radius: 24px;
+  
+  /* Borda sutil com a cor original do card */
+  border: 1px solid rgba(var(--service-color-rgb), 0.3); 
+  padding: 32px 24px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.01);
+  
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  position: relative;
+  overflow: hidden;
+  
+  transition: border-color 0.3s ease, transform 0.3s ease, background-color 0.3s ease;
+}
+
+/* Criando a linha colorida na parte inferior do card */
+.service-card::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background-color: var(--service-color); /* Usa a cor pura */
+  
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease;
+}
+
+/* --- ANIMAÇÕES AO PASSAR O MOUSE --- */
+.service-card:hover {
+  /* A borda fica mais escura e visível no hover */
+  border-color: var(--service-color);
+  /* O fundo ganha um pouquinho mais de cor (8% de opacidade) */
+  background-color: rgba(var(--service-color-rgb), 0.08);
+  transform: translateY(-4px); /* Aumentei um pouquinho a flutuação para dar mais vida */
+}
+
+.service-card:hover::after {
+  transform: scaleX(1);
+}
+
+.service-card:hover .arrow {
+  transform: translateX(4px);
+}
+
+/* Ajuste sutil nas caixas de ícone para combinar com a proposta */
+.icon-wrapper {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+  /* Opcional: faz o ícone ter um fundo ligeiramente mais forte que o card */
+  background-color: rgba(var(--service-color-rgb), 0.1); 
+}
+
+
+/* --- CENTRAL DE CORES REFEITA (AGORA NOS CARDS) --- */
+/* Declaramos a cor normal (HEX) e os valores em RGB para podermos usar transparência/opacidade */
+
+.card-yellow { 
+  --service-color: #f4c25b; 
+  --service-color-rgb: 244, 194, 91;
+}
+.card-red { 
+  --service-color: #ff5f5f; 
+  --service-color-rgb: 255, 95, 95;
+}
+.card-blue-old { 
+  --service-color: #5371bd; 
+  --service-color-rgb: 83, 113, 189;
+}
+.card-green { 
+  --service-color: #00a884; 
+  --service-color-rgb: 0, 168, 132;
+}
+.card-dark { 
+  --service-color: #424552; 
+  --service-color-rgb: 66, 69, 82;
+}
+
+
+
+
+/* Ajuste na caixa do ícone para receber a imagem limpa */
+.icon-wrapper {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+  background-color: transparent; /* Remove o fundo colorido antigo */
+}
+
+/* Nova regra para controlar o tamanho da imagem do ícone */
+.service-icon-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain; /* Garante que a imagem não fique esticada ou distorcida */
+}
+
+/* --- NOVAS CLASSES DE CORES DOS ÍCONES (SITES ANTIGOS) --- */
+.icon-yellow { background-color: #f4c25b; color: #ffffff; }
+.icon-red { background-color: #ff5f5f; color: #ffffff; }
+.icon-blue-old { background-color: #5371bd; color: #ffffff; }
+.icon-green { background-color: #70cca6; color: #ffffff; }
+.icon-dark { background-color: #424552; color: #ffffff; }
+
+
+/* Título do Serviço */
+.service-title {
+  /* Substitua a cor antiga (#1e293b) por esta linha: */
+  color: var(--service-color); 
+  
+  font-size: 20px;
+  font-weight: 700;
+  margin: 0 0 12px 0;
+}
+
+/* Descrição do Serviço */
+.service-description {
+  color: #64748b;
+  font-size: 14px;
+  line-height: 1.6;
+  margin: 0 0 24px 0;
+  min-height: 68px; /* Mantém o alinhamento dos botões caso o texto varie */
+}
+
+/* --- O BOTÃO ATUALIZADO --- */
+.btn-action {
+  width: auto;
+  padding: 0;
+  background: transparent;
+  border: none;
+  
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 15px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  
+  margin-top: auto;
+  color: var(--service-color); /* Herda a cor do card pai */
+  cursor: pointer;
+}
+
+.arrow {
+  display: inline-block;
+  transition: transform 0.2s ease;
+  font-size: 18px;
+  line-height: 1;
+}
+
+
+/* --- CENTRAL DE CORES (VÍNCULO COM AS VARIÁVEIS DO SEU SITE) --- */
+/* Aqui mapeamos a cor para o botão, para a linha inferior e para a borda ao mesmo tempo! */
+
+.btn-yellow { --service-color: #f4c25b; }
+.btn-red { --service-color: #ff5f5f; }
+.btn-blue-old { --service-color: #5371bd; }
+.btn-green { --service-color: #00a884; } /* Ajustei para o verde esmeralda do seu print */
+.btn-dark { --service-color: #424552; }
+
+
+
+.btn-icon {
+  font-size: 16px;
+}
+
+/* Responsividade para telas menores */
+@media (max-width: 1100px) {
+  .services-container {
+    grid-template-columns: repeat(2, 1fr); /* 2 por fileira em tablets */
+  }
+}
+
+@media (max-width: 650px) {
+  .services-container {
+    grid-template-columns: 1fr; /* 1 por fileira no celular */
+  }
+}
+
+/* Projetos */
+.section-desc { max-width: 600px; margin: 0 auto 50px; color: var(--text-light); }
+.project-card {
+    background: var(--white);
+    padding: 30px 20px;
+    border-radius: 10px;
+    border: 1px solid #eaeaea;
+    transition: var(--transition);
+}
+.project-card:hover { box-shadow: 0 10px 20px rgba(0,0,0,0.05); }
+.project-icon { font-size: 2.5rem; color: var(--primary); margin-bottom: 15px; }
+.project-card h3 { font-size: 1.25rem; margin-bottom: 10px; }
+.project-card p { font-size: 0.9rem; color: var(--text-light); }
+
+/* CTA Section */
+/* ===================================================
+   NOVA SEÇÃO CTA REESTRUTURADA (MEDCLIN PREMIUM)
+   =================================================== */
+.cta-section {
+    background-color: #e2e8f0; /* Fundo cinza claro para casar com o resto do site */
+    padding: 0px 0;
+}
+
+/* Container em Grid: 2 colunas no PC */
+.cta-grid {
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 50px;
+    align-items: center;
+}
+
+/* Lado Esquerdo: Textos */
+.cta-left-content h2 {
+    font-size: 2.8rem;
+    font-weight: 700;
+    line-height: 1.2;
+    color: var(--text-dark);
+    margin-bottom: 20px;
+}
+
+.cta-left-content h2 span {
+    color: #0046ff; /* O azul marcante do seu novo portal */
+    font-weight: 800;
+}
+
+.cta-left-content .cta-main-p {
+    font-size: 1.25rem;
+    color: #1e293b;
+    font-weight: 500;
+    margin-bottom: 25px;
+    line-height: 1.5;
+}
+
+/* Lado Direito: Cards de Benefícios */
+.cta-benefits-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.cta-benefit-item {
+    background: var(--white);
+    padding: 24px;
+    border-radius: 16px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+    border: 1px solid #eaeaea;
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+    transition: var(--transition);
+}
+
+.cta-benefit-item:hover {
+    transform: translateX(5px);
+    border-color: rgba(0, 70, 255, 0.3);
+}
+
+/* Ícones dos Cards */
+.cta-icon-box {
+    width: 45px;
+    height: 45px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.3rem;
+    flex-shrink: 0;
+}
+
+/* Cores dedicadas aos ícones para dar vida ao layout */
+.bg-blue-light { background-color: rgba(0, 70, 255, 0.1); color: #0046ff; }
+.bg-red-light { background-color: rgba(220, 38, 38, 0.1); color: #dc2626; }
+.bg-green-light { background-color: rgba(0, 168, 132, 0.1); color: #00a884; }
+
+.cta-benefit-text h4 {
+    font-size: 1.1rem;
+    color: var(--text-dark);
+    margin-bottom: 4px;
+    font-weight: 700;
+}
+
+.cta-benefit-text p {
+    font-size: 0.95rem;
+    color: var(--text-light);
+    line-height: 1.4;
+    margin: 0;
+}
+
+/* Responsividade para Celulares */
+@media (max-width: 992px) {
+    .cta-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+    .cta-left-content h2 {
+        font-size: 2.2rem;
+    }
+}
+
+/* Footer */
+.footer { 
+    background-color: #24355f; /* MUDADO: Agora usa o mesmo azul do site */
+    color: #ffffff; /* MUDADO: Texto geral em branco para dar leitura sobre o azul */
+    padding: 40px 0 20px; 
+}
+
+.grid-footer { 
+    display: grid; 
+    grid-template-columns: 2fr 1fr; 
+    gap: 40px; 
+    padding: 20px 0; 
+}
+
+.footer-brand h3, .footer-contact h4 { 
+    color: var(--white); 
+    margin-bottom: 15px; 
+}
+
+.footer-contact p { 
+    margin-bottom: 10px; 
+    font-size: 0.95rem; 
+}
+
+/* O ícone do endereço agora herda o branco do parágrafo */
+.footer-contact i { 
+    color: #ffffff; 
+    margin-right: 8px; 
+}
+
+.footer-bottom { 
+    border-top: 1px solid rgba(255, 255, 255, 0.2); /* MUDADO: Linha divisória sutil e clara */
+    padding-top: 20px; 
+    text-align: center; 
+    font-size: 0.85rem; 
+    color: rgba(255, 255, 255, 0.8); /* Texto de direitos autorais levemente suave */
+}
+
+/* ===================================================
+   AJUSTE DOS LINKS DAS REDES SOCIAIS SOBRE O FUNDO AZUL
+   =================================================== */
+
+/* Instagram */
+.footer-instagram {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: #ffffff; /* MUDADO: Texto em branco */
+    text-decoration: none;
+    font-size: 0.95rem;
+    margin-top: 15px;
+    transition: var(--transition);
+}
+.footer-instagram i {
+    font-size: 1.2rem;
+    color: #ff5f5f; /* Mantém o ícone vermelho que você pediu */
+}
+.footer-instagram:hover {
+    color: #ff5f5f; /* Texto acende em vermelho no hover */
+    transform: translateX(3px);
+}
+
+/* WhatsApp */
+.footer-whatsapp {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: #ffffff; /* MUDADO: Texto em branco */
+    text-decoration: none;
+    font-size: 0.95rem;
+    transition: var(--transition);
+}
+.footer-whatsapp i {
+    font-size: 1.2rem;
+    color: #25d366; /* Mantém o ícone verde oficial */
+}
+.footer-whatsapp:hover {
+    color: #25d366; /* Texto acende em verde no hover */
+    transform: translateX(3px);
+}
+
+/* Estilização do link do Google Maps no Footer */
+.footer-maps {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: #ffffff; /* Texto em branco puro para contrastar com o fundo azul */
+    text-decoration: none;
+    font-size: 0.95rem;
+    line-height: 1.4;
+    transition: var(--transition);
+}
+
+.footer-maps i {
+    color: #ffffff !important; /* Força o ícone de pino a continuar branco */
+    font-size: 1.2rem;
+}
+
+.footer-maps:hover {
+    color: #eaeaea; /* Dá uma leve escurecida no texto ao passar o mouse para indicar o clique */
+    transform: translateX(3px); /* Mantém o padrão de leve deslocamento para a direita */
+}
+
+/* Ajuste sutil para o CEP não colar no link de cima */
+.cep-text {
+    margin-top: 5px;
+    padding-left: 28px; /* Alinha o CEP logo abaixo do início do texto da rua, pulando o ícone */
+    color: #ffffff;
+}
+
+/* Menu sanduíche mobile */
+.menu-toggle { display: none; flex-direction: column; cursor: pointer; background: transparent; border: none; }
+.menu-toggle .bar { width: 25px; height: 3px; background-color: var(--text-dark); margin: 4px 0; transition: var(--transition); }
+
+/* Responsividade */
+@media (max-width: 992px) {
+    .grid-3, .grid-4 { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 768px) {
+    .grid-2, .grid-3, .grid-4, .grid-footer { grid-template-columns: 1fr; }
+    .hero h1 { font-size: 2.3rem; }
+    .menu-toggle { display: flex; }
+    .nav-menu {
+        position: absolute;
+        top: 65px;
+        left: -100%;
+        flex-direction: column;
+        background: var(--white);
+        width: 100%;
+        text-align: center;
+        transition: 0.3s;
+        box-shadow: 0 10px 10px rgba(0,0,0,0.05);
+        padding: 20px 0;
+        gap: 20px;
+    }
+    .nav-menu.active { left: 0; }
+}
+
+/* Ajuste para centralizar a foto da Louise no mobile */
+@media screen and (max-width: 768px) {
+    .about-section .container.grid-2 {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center; /* Centraliza também os textos e títulos no mobile se quiser manter o padrão dos cards */
+    }
+
+    .about-image {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        margin-bottom: 20px; /* Dá um espaço entre a foto e o texto abaixo dela */
+    }
+
+    .about-image img {
+        margin: 0 auto; /* Garante a centralização absoluta da imagem */
+    }
+}
+
+/* ===================================================
+   ESTILO DO MODAL (ESTRUTURA ÚNICA PARA TODOS OS CARDS)
+   =================================================== */
+
+/* O Box do Modal */
+/* O Box do Modal - CENTRALIZADO NO MEIO DA TELA */
+.modal-box {
+  border: none;
+  border-radius: 24px;
+  padding: 40px;
+  width: 90%;
+  max-width: 700px;
+  background: #ffffff;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
+  
+  /* O segredo da centralização perfeita: */
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0.9); /* Centraliza e prepara o efeito de zoom */
+  margin: 0; /* Remove margens automáticas do browser que desalitam o dialog */
+  
+  /* Animação suave para abrir */
+  opacity: 0;
+  transition: opacity 0.3s ease, transform 0.3s ease, display 0.3s ease allow-discrete;
+}
+
+/* Estado do Modal quando está aberto na tela */
+.modal-box[open] {
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1); /* Mantém centralizado enquanto aplica o zoom de 100% */
+}
+
+/* O Fundo Escuro atrás do Modal (Backdrop) */
+.modal-box::backdrop {
+  background: rgba(15, 23, 42, 0.6); /* Cor escura azulada */
+  backdrop-filter: blur(4px); /* Efeito de desfoque (blur) no fundo do site */
+  opacity: 0;
+  transition: opacity 0.3s ease, display 0.3s ease allow-discrete;
+}
+
+/* Estado do fundo quando o modal abre */
+.modal-box[open]::backdrop {
+  opacity: 1;
+}
+
+/* Container do conteúdo interno */
+.modal-content {
+  position: relative;
+}
+
+/* Botão de Fechar (O "X" no canto superior direito) */
+.modal-close-btn {
+  position: absolute;
+  top: -20px;
+  right: -10px;
+  background: transparent;
+  border: none;
+  font-size: 32px;
+  color: #64748b;
+  cursor: pointer;
+  transition: color 0.2s ease;
+  line-height: 1;
+}
+
+.modal-close-btn:hover {
+  color: #ff5f5f; /* Fica vermelho ao passar o mouse */
+}
+
+/* Título de dentro do Modal */
+#modal-title {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 26px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  padding-right: 20px; /* Evita que o título morda o botão de fechar */
+}
+
+/* Estilização dos textos/parágrafos que você vai colocar */
+#modal-text p {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #475569;
+  font-size: 16px;
+  line-height: 1.6;
+  margin-bottom: 16px;
+}
+
+/* Destaca as tags <strong> que você usar nos textos */
+#modal-text strong {
+  color: #1e293b;
+  font-weight: 600;
+}
+
+/* Container inferior para afastar o botão do último parágrafo */
+.modal-footer-action {
+  margin-top: 32px;
+  text-align: center; /* Centraliza horizontalmente dentro do modal */
+}
+
+/* Estilo do Botão de Link Externo */
+.btn-modal-external {
+  display: inline-block;
+  padding: 14px 28px;
+  color: #ffffff !important; /* Mantém a cor da fonte sempre branca */
+  text-decoration: none;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease, filter 0.2s ease;
+}
+
+/* Efeito Hover do Botão */
+.btn-modal-external:hover {
+  transform: translateY(-2px); /* Efeito suave de flutuação */
+  filter: brightness(0.9); /* Escurece sutilmente o fundo do botão dinamicamente */
+}
+
+/* Remove o espaçamento de baixo do bloco do título */
+.no-bottom-padding {
+    padding-bottom: 0 !important;
+}
+
+/* Ajusta o espaçamento de cima dos cards para casar perfeitamente */
+.compact-services {
+    padding-top: 0px !important;
+}
+
+/* Remove o espaçamento acima do "O que fazemos" E puxa os cards para cima */
+.reduce-top-margin {
+    padding-top: 0px !important;
+    padding-bottom: 0 !important; /* Zera o restinho do container do texto */
+}
+
+/* Reduz drasticamente a margem de baixo do textinho descritivo */
+.reduce-top-margin .section-desc {
+    margin-bottom: 50px !important; /* Mude para 5px ou 0px se quiser ainda mais perto! */
+}
+
+/* ===================================================
+   LAYOUT DE CABEÇALHO COM MASCOTE (SERVIÇOS) - ATUALIZADO
+   =================================================== */
+
+/* Transforma o cabeçalho de serviços em Grid (2 Colunas no Computador) */
+.services-header-grid {
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr; /* Garante que o texto ganhe mais área */
+    gap: 40px;
+    align-items: center;
+    padding-bottom: 20px !important;
+    padding-left: 0px;
+    padding-right: 30px;
+}
+
+/* Container dos textos */
+.services-header-text {
+    text-align: center; /* Modificado para garantir a centralização dos elementos internos */
+}
+
+/* FORÇA O SUBTITULO "O QUE FAZEMOS" A FICAR CENTRALIZADO */
+.services-header-text .subtitle {
+    text-align: center;
+    display: block;
+    max-width: 530px; 
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* NOVO: Força o título principal "Conheça Nossos Serviços" a ficar centralizado */
+.services-header-text h2 {
+    text-align: center;
+    max-width: 530px;
+    margin: 0 auto 20px auto; /* Centraliza o bloco e aplica margem abaixo */
+}
+
+/* NOVO: Alinha o parágrafo descritivo e centraliza o bloco na tela */
+.services-header-text .section-desc {
+    text-align: center;        /* Texto centralizado internamente */
+    max-width: 530px;          /* Mantém o limite para quebrar linhas elegantemente */
+    margin: 0 auto 20px auto !important; /* 'auto' nas laterais força ele a ir para o meio */
+}
+
+/* Alinha a caixa da mascote horizontalmente */
+.services-header-mascot {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+/* Controla as dimensões da mascote para não estourar a tela */
+.mascot-img {
+    max-width: 280px; 
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    filter: drop-shadow(0px 10px 15px rgba(0, 0, 0, 0.08)); 
+}
+
+/* --- ADAPTAÇÕES DE RESPONSIVIDADE PARA O MOBILE (TELAS MENORES) --- */
+@media (max-width: 768px) {
+    .services-header-grid {
+        grid-template-columns: 1fr; 
+        gap: 20px;
+        text-align: center;
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    .services-header-text .subtitle,
+    .services-header-text h2,
+    .services-header-text .section-desc {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .services-header-text .section-desc {
+        margin-bottom: 10px;
+    }
+
+    /* Coloca a mascote no topo do texto no ambiente mobile */
+    .services-header-mascot {
+        order: -1; 
+    }
+
+    .mascot-img {
+        max-width: 190px; 
+    }
+}

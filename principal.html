@@ -1,0 +1,403 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MedClin</title>
+    <link rel="stylesheet" href="principal.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link rel="icon" type="image/png" href="/img/logo.png">
+  </head>
+  <body>
+    <header class="navbar">
+      <div class="nav-container">
+        <a href="principal.html" class="logo">
+    <img src="img/logo.png" alt="MedClin Logo" class="logo-img">
+        </a>
+        <button class="menu-toggle" id="mobile-menu" aria-label="Abrir menu">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </button>
+        <nav class="nav-menu">
+          <a href="principal.html" class="nav-link active">Início</a>
+          <a href="#sobre" class="nav-link">Quem Somos</a>
+          <a href="#servicos" class="nav-link">Serviços</a>
+          <a href="#cta" class="nav-link">Vantagens</a>
+          <a href="clinica.html" class="nav-link">Cliníca</a>
+          <a href="contato.html" class="nav-link">Contato</a>
+          <a href="https://portalmedclin.madusaude.com.br/autenticacao/entrar?redirect=%2Fhome" class="nav-link" target="_blank" rel="noopener noreferrer">Empresas</a>
+          <a href="https://wa.me/5516992148740" class="btn-nav" target="_blank" rel="noopener noreferrer">Fale Conosco</a>
+        </nav>
+      </div>
+    </header>
+
+    <section class="hero">
+  <div class="hero-content">
+    <h1>Bem-vindo ao <br><span>Portal MedClin</span></h1>
+    <p>Excelência em Medicina Ocupacional e Segurança do Trabalho para empresas que valorizam pessoas.</p>
+  </div>
+</section>
+
+    <section id="sobre" class="about-section">
+      <div class="container grid-2">
+        <div class="about-image">
+          <img
+            src="/img/00fachada.jpg"
+            alt="Fachada da Clínica MedClin"
+            style="
+              width: 85%;
+              max-width: 450px;
+              height: auto;
+              border-radius: 12px;
+              object-fit: cover;
+              box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+            "
+          />
+        </div>
+        <div class="about-text">
+          <h2>Quem Somos</h2>
+          <p>
+            Com 26 anos de experiência, somos uma empresa genuinamente francana
+            que une tradição, profissionalismo e compromisso com o cliente.
+            Reconhecidos pelo CREA, seguimos investindo constantemente em
+            qualidade, inovação e atendimento de excelência.
+          </p>
+          <h2>Nossa Missão</h2>
+          <p>
+            Qualidade e agilidade no atendimento em Medicina e Segurança do
+            Trabalho, visando sempre a Saúde do Trabalhador.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="servicos" class="mvw-section">
+      <div class="container reduce-top-margin services-header-grid">
+        <div class="services-header-text">
+          <span class="subtitle">O que fazemos</span>
+          <h2>Conheça Nossos Serviços</h2>
+          <p class="section-desc">
+            A MEDCLIN atua diretamente com soluções completas em Medicina e Segurança do Trabalho para empresas de todos os portes.
+          </p>
+        </div>
+
+        <div class="services-header-mascot">
+          <img 
+            src="img/mascote_service.png" 
+            alt="Mascote MedClin" 
+            class="mascot-img"
+          />
+        </div>
+      </div>
+
+      <div class="services-container compact-services">
+        <div class="service-card card-yellow">
+          <div class="icon-wrapper">
+            <img
+              src="img/exames.png"
+              alt="Ícone de Exames"
+              class="service-icon-img"
+            />
+          </div>
+          <h3 class="service-title">Exames</h3>
+          <p class="service-description">
+            Admissionais, Demissionais, Periódicos, Mudança de Função e Retorno
+            ao Trabalho
+          </p>
+          <a href="#" class="btn-action">
+            Saiba Mais <span class="arrow">→</span>
+          </a>
+        </div>
+
+        <div class="service-card card-red">
+          <div class="icon-wrapper">
+            <img
+              src="img/pcmso.png"
+              alt="Ícone de PCMSO"
+              class="service-icon-img"
+            />
+          </div>
+          <h3 class="service-title">PCMSO</h3>
+          <p class="service-description">
+            Programa de Controle Médico em Saúde Ocupacional (NR7)
+          </p>
+          <a href="#" class="btn-action">
+            Saiba Mais <span class="arrow">→</span>
+          </a>
+        </div>
+
+        <div class="service-card card-blue-old">
+          <div class="icon-wrapper">
+            <img
+              src="img/pgr.png"
+              alt="Ícone de PGR"
+              class="service-icon-img"
+            />
+          </div>
+          <h3 class="service-title">PGR</h3>
+          <p class="service-description">Programa de Gerenciamento de Riscos</p>
+          <a href="#" class="btn-action">
+            Saiba Mais <span class="arrow">→</span>
+          </a>
+        </div>
+
+        <div class="service-card card-green">
+          <div class="icon-wrapper">
+            <img
+              src="img/ltcat.png"
+              alt="Ícone de LTCAT"
+              class="service-icon-img"
+            />
+          </div>
+          <h3 class="service-title">LTCAT</h3>
+          <p class="service-description">
+            Laudo Técnico de Condições Ambientais de Trabalho
+          </p>
+          <a href="#" class="btn-action">
+            Saiba Mais <span class="arrow">→</span>
+          </a>
+        </div>
+
+        <div class="service-card card-yellow">
+          <div class="icon-wrapper">
+            <img
+              src="img/exames_complementares.png"
+              alt="Ícone de Exames Complementares"
+              class="service-icon-img"
+            />
+          </div>
+          <h3 class="service-title">Complementares</h3>
+          <p class="service-description">
+            Audiometria, RX, ECG, Acuidade visual, Dinamometria, Espiometria e
+            outros
+          </p>
+          <a href="#" class="btn-action">
+            Saiba Mais <span class="arrow">→</span>
+          </a>
+        </div>
+
+        <div class="service-card card-red">
+          <div class="icon-wrapper">
+            <img
+              src="img/ppp.png"
+              alt="Ícone de PPP"
+              class="service-icon-img"
+            />
+          </div>
+          <h3 class="service-title">PPP</h3>
+          <p class="service-description">
+            Perfil Profissiográfico Previdenciário
+          </p>
+          <a href="#" class="btn-action">
+            Saiba Mais <span class="arrow">→</span>
+          </a>
+        </div>
+
+        <div class="service-card card-blue-old">
+          <div class="icon-wrapper">
+            <img
+              src="img/cursos.png"
+              alt="Ícone de Cursos"
+              class="service-icon-img"
+            />
+          </div>
+          <h3 class="service-title">Cursos</h3>
+          <p class="service-description">Formação da CIPA</p>
+          <a href="#" class="btn-action">
+            Saiba Mais <span class="arrow">→</span>
+          </a>
+        </div>
+
+        <div class="service-card card-green">
+          <div class="icon-wrapper">
+            <img
+              src="img/pcmat.png"
+              alt="Ícone de PCMAT"
+              class="service-icon-img"
+            />
+          </div>
+          <h3 class="service-title">PCMAT</h3>
+          <p class="service-description">
+            Programa de Controle de Meio Ambiente de Trabalho
+          </p>
+          <a href="#" class="btn-action">
+            Saiba Mais <span class="arrow">→</span>
+          </a>
+        </div>
+
+        <div class="service-card card-red">
+          <div class="icon-wrapper">
+            <img
+              src="img/laudos.png"
+              alt="Ícone de Laudos"
+              class="service-icon-img"
+            />
+          </div>
+          <h3 class="service-title">Laudos</h3>
+          <p class="service-description">Laudos Ergonômicos</p>
+          <a href="#" class="btn-action">
+            Saiba Mais <span class="arrow">→</span>
+          </a>
+        </div>
+
+        <div class="service-card card-blue-old">
+          <div class="icon-wrapper">
+            <img
+              src="img/assessoria.png"
+              alt="Ícone de Assessoria"
+              class="service-icon-img"
+            />
+          </div>
+          <h3 class="service-title">Assessoria</h3>
+          <p class="service-description">
+            Engenheiros do Trabalho e outros, para atendimento às exigências do
+            Ministério do Trabalho
+          </p>
+          <a href="#" class="btn-action">
+            Saiba Mais <span class="arrow">→</span>
+          </a>
+        </div>
+
+        <div class="service-card card-dark">
+          <div class="icon-wrapper">
+            <img
+              src="img/laboratorio.png"
+              alt="Ícone de Laboratório"
+              class="service-icon-img"
+            />
+          </div>
+          <h3 class="service-title">Laboratório</h3>
+          <p class="service-description">
+            Próprio
+          </p>
+          <a href="#" class="btn-action">
+            Saiba Mais <span class="arrow">→</span>
+          </a>
+        </div>
+
+        <div class="service-card card-green">
+          <div class="icon-wrapper">
+            <img
+              src="img/esocial.png"
+              alt="Ícone de e-Social"
+              class="service-icon-img"
+            />
+          </div>
+          <h3 class="service-title">e-Social</h3>
+          <p class="service-description">
+            Envio dos Eventos: S-2210, S-2220 e S-2240
+          </p>
+          <a href="#" class="btn-action">
+            Saiba Mais <span class="arrow">→</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section id="cta" class="cta-section">
+      <div class="container cta-grid">
+        
+        <!-- COLUNA DA ESQUERDA: CHAMADA PRINCIPAL -->
+        <div class="cta-left-content">
+          <h2>Vantagem para sua <span>EMPRESA</span> <br>e seus Colaboradores</h2>
+          <p class="cta-main-p">Seja uma empresa Conveniada com a MEDCLIN e garanta o melhor suporte em medicina ocupacional.</p>
+          
+          <!-- Linha decorativa que puxa o estilo do seu topo -->
+          <div style="width: 60px; height: 4px; background-color: #0046ff; border-radius: 2px;"></div>
+        </div>
+
+        <!-- COLUNA DA DIREITA: OS ARGUMENTOS EM FORMATO DE CARDS MODERNOS -->
+        <div class="cta-benefits-list">
+          
+          <!-- Card 1: Saúde Garantida -->
+          <div class="cta-benefit-item">
+            <div class="cta-icon-box bg-blue-light">
+              <i class="fa-solid fa-shield-halved"></i>
+            </div>
+            <div class="cta-benefit-text">
+              <h4>Saúde do Trabalhador</h4>
+              <p>A proteção e o bem-estar da sua equipe garantidos por Lei e acompanhados por especialistas.</p>
+            </div>
+          </div>
+
+          <!-- Card 2: Prevenção de Riscos -->
+          <div class="cta-benefit-item">
+            <div class="cta-icon-box bg-red-light">
+              <i class="fa-solid fa-triangle-exclamation"></i>
+            </div>
+            <div class="cta-benefit-text">
+              <h4>Evite Multas e Prejuízos</h4>
+              <p>Mantenha sua empresa 100% regularizada perante as exigências fiscais e cuide de seus colaboradores com carinho.</p>
+            </div>
+          </div>
+
+          <!-- Card 3: Inovação Móvel -->
+          <div class="cta-benefit-item">
+            <div class="cta-icon-box bg-green-light">
+              <i class="fa-solid fa-truck-medical"></i>
+            </div>
+            <div class="cta-benefit-text">
+              <h4>Consultório Móvel</h4>
+              <p>Oferecemos atendimento no local com profissionais e equipamentos necessários para a realização dos exames exigidos pelo Ministério do Trabalho.</p>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <dialog id="service-modal" class="modal-box">
+  <div class="modal-content">
+    <button id="close-modal" class="modal-close-btn">&times;</button>
+    
+    <div id="modal-body">
+      <h2 id="modal-title">Título Dinâmico</h2>
+      <div id="modal-text">
+        </div>
+    </div>
+  </div>
+</dialog>
+
+    <footer class="footer">
+      <div class="container grid-footer">
+        <div class="footer-brand">
+          <h3>MedClin</h3>
+          <p>
+            Soluções completas em Medicina e Segurança do Trabalho, eSocial SST para empresas de todos os portes.
+          </p>
+          <a
+            href="https://www.instagram.com/medclinfranca/"
+            target="_blank"
+            class="footer-instagram"
+          >
+            <i class="fa-brands fa-instagram"></i> @medclinfranca</a
+          >
+        </div>
+        <div class="footer-contact">
+          <h4>Contato</h4>
+          <p>
+            <a href="https://wa.me/5516992148740" target="_blank" class="footer-whatsapp">
+              <i class="fa-brands fa-whatsapp"></i> (16) 99214-8740 
+            </a>
+          <p>
+            <a href="https://www.google.com/maps/@-20.5346094,-47.3986729,3a,75y,159.97h,91.99t/data=!3m7!1e1!3m5!1sViwZgVvNKNiFkwGL6aQO-g!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-1.9918402182963035%26panoid%3DViwZgVvNKNiFkwGL6aQO-g%26yaw%3D159.97047590166952!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI2MDUyNy4wIKXMDSoASAFQAw%3D%3D" target="_blank" class="footer-maps">
+              <i class="fa-solid fa-location-dot"></i> Rua Thomaz Gonzaga, 1627 (Centro) - Franca, SP
+            </a>
+          </p>
+          
+          <p class="cep-text">CEP: 14400-540</p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 MedClin. Todos os direitos reservados.</p>
+      </div>
+    </footer>
+
+    <script src="principal.js"></script>
+  </body>
+</html>

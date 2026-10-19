@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contato</title>
+    <link rel="stylesheet" href="principal.css">
+    <link rel="stylesheet" href="contato.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" type="image/png" href="/img/logo.png">
+</head>
+<body>
+
+    <header class="navbar">
+        <div class="nav-container">
+            <a href="principal.html" class="logo">
+    <img src="img/logo.png" alt="MedClin Logo" class="logo-img">
+        </a>
+            <button class="menu-toggle" id="mobile-menu" aria-label="Abrir menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+            <nav class="nav-menu">
+                <a href="principal.html" class="nav-link">Início</a>
+                <a href="contato.html" class="nav-link active">Contato</a>
+                <a href="https://portalmedclin.madusaude.com.br/autenticacao/entrar?redirect=%2Fhome" class="nav-link" target="_blank" rel="noopener noreferrer">Empresas</a>
+          <a href="https://wa.me/5516992148740" class="btn-nav" target="_blank" rel="noopener noreferrer">Fale Conosco</a>
+            </nav>
+        </div>
+    </header>
+
+    <section class="contato-intro">
+      <div class="container intro-flex">
+        <div class="intro-text">
+          <span class="subtitle">Fale Conosco</span>
+          <h2>Canais de Atendimento</h2>
+          <p class="section-desc">
+            Estamos prontos para atender sua empresa com agilidade e eficiência. Entre em contato pelos nossos canais ou solicite uma visita dos nossos representantes.
+          </p>
+        </div>
+        
+        <div class="intro-mascote">
+          <img src="img/mascote_contato.png" alt="Mascote MedClin Atendimento" class="img-mascote" />
+        </div>
+      </div>
+    </section>
+
+    <!-- SEÇÃO DOS CARDS (Organizados em Grid de 2x2) -->
+    <section class="contato-principal">
+      <div class="container contato-grid-main">
+        
+          <!-- Card 1: Horário -->
+          <div class="info-card">
+            <div class="info-icon icon-blue"><i class="fa-regular fa-clock"></i></div>
+            <div class="info-content">
+              <h3>Horário de Funcionamento</h3>
+              <p>Segunda a Sexta-feira</p>
+              <p class="highlight-text">08:00 às 11:30 hs / 13:00 às 17:30</p>
+            </div>
+          </div>
+
+          <!-- Card 2: Endereço -->
+          <div class="info-card">
+            <div class="info-icon icon-green"><i class="fa-solid fa-location-dot"></i></div>
+            <div class="info-content">
+              <h3>Visite Nosso Espaço</h3>
+              <p>Rua Thomaz Gonzaga, 1627 - Centro</p>
+              <p>Franca - SP | CEP: 14400-540</p>
+              <a href="https://www.google.com/maps/@-20.5346094,-47.3986729,3a,75y,159.97h,91.99t/data=!3m7!1e1!3m5!1sViwZgVvNKNiFkwGL6aQO-g!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-1.9918402182963035%26panoid%3DViwZgVvNKNiFkwGL6aQO-g%26yaw%3D159.97047590166952!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI2MDUyNy4wIKXMDSoASAFQAw%3D%3D" target="_blank" class="card-link">Ver no Google Maps <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+          </div>
+
+          <!-- Card 3: Telefones / WhatsApp -->
+          <div class="info-card">
+            <div class="info-icon icon-blue"><i class="fa-solid fa-phone"></i></div>
+            <div class="info-content">
+              <h3>Telefone e WhatsApp</h3>
+              <p>Telefone: <strong>(16) 3722-6135</strong></p>
+              <p>WhatsApp: <strong>(16) 99214-8740</strong> <span class="tag-virtual">Atendimento Virtual</span></p>
+              <a href="https://wa.me/5516992148740" target="_blank" class="btn-whatsapp-card"><i class="fa-brands fa-whatsapp"></i> Chamar no WhatsApp</a>
+            </div>
+          </div>
+
+          <!-- Card 4: E-mail e Redes -->
+          <div class="info-card">
+            <div class="info-icon icon-purple"><i class="fa-regular fa-envelope"></i></div>
+            <div class="info-content">
+              <h3>E-mail e Redes Sociais</h3>
+              <p class="email-text">medclin@medclinonline.com.br</p>
+              <div class="social-links-cards">
+                <a href="https://www.instagram.com/medclinfranca/" target="_blank" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                <a href="https://www.facebook.com/medclinonline" target="_blank" aria-label="Facebook"><i class="fa-brands fa-facebook"></i></a>
+              </div>
+            </div>
+          </div>
+
+      </div> <!-- Fim da div .contato-grid-main (ESSENCIAL PARA NÃO BUGAR O FOOTER) -->
+    </section> <!-- Fim da section .contato-principal (ESSENCIAL PARA NÃO BUGAR O FOOTER) -->
+
+    <footer class="footer">
+      <div class="container grid-footer">
+        <div class="footer-brand">
+          <h3>MedClin</h3>
+          <p>
+            Soluções completas em Medicina e Segurança do Trabalho, eSocial SST para empresas de todos os portes.
+          </p>
+          <a href="https://www.instagram.com/medclinfranca/" target="_blank" class="footer-instagram">
+            <i class="fa-brands fa-instagram"></i> @medclinfranca
+          </a>
+        </div>
+        <div class="footer-contact">
+          <h4>Contato</h4>
+          <p>
+            <a href="https://wa.me/5516992148740" target="_blank" class="footer-whatsapp">
+              <i class="fa-brands fa-whatsapp"></i> (16) 99214-8740 
+            </a>
+          </p>
+          <p>
+            <a href="https://www.google.com/maps/@-20.5346094,-47.3986729,3a,75y,159.97h,91.99t/data=!3m7!1e1!3m5!1sViwZgVvNKNiFkwGL6aQO-g!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-1.9918402182963035%26panoid%3DViwZgVvNKNiFkwGL6aQO-g%26yaw%3D159.97047590166952!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI2MDUyNy4wIKXMDSoASAFQAw%3D%3D" target="_blank" class="footer-maps">
+              <i class="fa-solid fa-location-dot"></i> Rua Thomaz Gonzaga, 1627 (Centro) - Franca, SP
+            </a>
+          </p>
+          <p class="cep-text">CEP: 14400-540</p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 MedClin. Todos os direitos reservados.</p>
+      </div>
+    </footer>
+
+    <script src="principal.js"></script>
+</body>
+</html>
